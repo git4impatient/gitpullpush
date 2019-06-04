@@ -198,6 +198,24 @@ Fast-forward
 [marty@gromit gitpullpush]$ git push
 
 
+[marty@gromit gitpullpush]$ git checkout savepoint12414
+Switched to branch 'savepoint12414'
+[marty@gromit gitpullpush]$ git push -u origin savepoint12414
+Username for 'https://github.com': git4impatient
+Password for 'https://git4impatient@github.com': 
+Counting objects: 22, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (17/17), done.
+Writing objects: 100% (22/22), 5.77 KiB | 0 bytes/s, done.
+Total 22 (delta 6), reused 0 (delta 0)
+remote: Resolving deltas: 100% (6/6), done.
+remote: 
+remote: Create a pull request for 'savepoint12414' on GitHub by visiting:
+remote:      https://github.com/git4impatient/gitpullpush/pull/new/savepoint12414
+remote: 
+To https://github.com/git4impatient/gitpullpush
+ * [new branch]      savepoint12414 -> savepoint12414
+Branch savepoint12414 set up to track remote branch savepoint12414 from origin.
 
 
 
