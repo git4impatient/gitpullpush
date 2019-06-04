@@ -1,2 +1,7 @@
 # create a copy of this reposity in the current working directory
 git clone https://github.com/git4impatient/gitpullpush/new/master
+# what are we aware of
+git remote -v 
+# look at status
+git status
+
