@@ -179,3 +179,26 @@ no changes added to commit (use "git add" and/or "git commit -a")
 Dropped refs/stash@{0} (bb82462a6b52e3f7acb567c06d8750b99ed5b53d)
 
 
+[marty@gromit gitpullpush]$ git branch
+  master
+* savepoint12414
+[marty@gromit gitpullpush]$ git checkout master
+Switched to branch 'master'
+[marty@gromit gitpullpush]$ git merge savepoint12414
+Updating 4b0dcaf..4148b2c
+Fast-forward
+ .samplegitcommands.swp | Bin 0 -> 16384 bytes
+ b                      |   0
+ samplecommands2        | 111 +++++++++++++++++++++++++++++++++++++
+ samplegitcommands      | 146 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 257 insertions(+)
+ create mode 100644 .samplegitcommands.swp
+ create mode 100644 b
+ create mode 100644 samplecommands2
+[marty@gromit gitpullpush]$ git push
+
+
+
+
+
+
