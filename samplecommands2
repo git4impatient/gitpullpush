@@ -1,14 +1,14 @@
-# create a copy of this reposity in the current working directory
-git clone https://github.com/git4impatient/gitpullpush/new/master
-# what are we aware of
-git remote -v 
-# look at status
-git status
-
-
- git pull https://github.com/git4impatient/gitpullpush
-
-
+[marty@gromit gitpullpush]$ git remote -v
+origin  https://github.com/git4impatient/gitpullpush (fetch)
+origin  https://github.com/git4impatient/gitpullpush (push)
+[marty@gromit gitpullpush]$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#       newfile
+nothing added to commit but untracked files present (use "git add" to track)
+[marty@gromit gitpullpush]$ git pull https://github.com/git4impatient/gitpullpush
 remote: Enumerating objects: 5, done.
 remote: Counting objects: 100% (5/5), done.
 remote: Compressing objects: 100% (3/3), done.
@@ -30,56 +30,6 @@ Fast-forward
 #
 #       newfile
 nothing added to commit but untracked files present (use "git add" to track)
-
-
-# so now add the file 
-[marty@gromit gitpullpush]$ git add --all
-[marty@gromit gitpullpush]$ git status
-# On branch master
-# Your branch is ahead of 'origin/master' by 1 commit.
-#   (use "git push" to publish your local commits)
-#
-# Changes to be committed:
-#   (use "git reset HEAD <file>..." to unstage)
-#
-#       new file:   foo/a
-#       new file:   newfile
-#       modified:   samplegitcommands
-#
-
-[marty@gromit gitpullpush]$ git commit -m "update current branch with new files and changes"
-[master 4b0dcaf] update current branch with new files and changes
- Committer: m <marty@gromit.lurie.biz>
-Your name and email address were configured automatically based
-on your username and hostname. Please check that they are accurate.
-You can suppress this message by setting them explicitly:
-
-    git config --global user.name "Your Name"
-    git config --global user.email you@example.com
-
-After doing this, you may fix the identity used for this commit with:
-
-    git commit --amend --reset-author
-
- 3 files changed, 28 insertions(+)
- create mode 100644 foo/a
- create mode 100644 newfile
-
-
-[marty@gromit gitpullpush]$ git push -u origin master
-Username for 'https://github.com': git4impatient
-Password for 'https://git4impatient@github.com': 
-Counting objects: 7, done.
-Delta compression using up to 8 threads.
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (5/5), 948 bytes | 0 bytes/s, done.
-Total 5 (delta 0), reused 0 (delta 0)
-To https://github.com/git4impatient/gitpullpush
-   17b2b35..4b0dcaf  master -> master
-Branch master set up to track remote branch master from origin.
-
-
-# foo
 [marty@gromit gitpullpush]$ cat >> samplegitcommands 
 
  git pull https://github.com/git4impatient/gitpullpush
@@ -133,6 +83,9 @@ You can suppress this message by setting them explicitly:
     git config --global user.name "Your Name"
     git config --global user.email you@example.com
 
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
 After doing this, you may fix the identity used for this commit with:
 
     git commit --amend --reset-author
@@ -144,7 +97,7 @@ After doing this, you may fix the identity used for this commit with:
 
 [marty@gromit gitpullpush]$ git push -u origin master
 Username for 'https://github.com': git4impatient
-Password for 'https://git4impatient@github.com': 
+Password for 'https://git4impatient@github.com':
 Counting objects: 7, done.
 Delta compression using up to 8 threads.
 Compressing objects: 100% (3/3), done.
@@ -154,28 +107,5 @@ To https://github.com/git4impatient/gitpullpush
    17b2b35..4b0dcaf  master -> master
 Branch master set up to track remote branch master from origin.
 
-
-[marty@gromit gitpullpush]$ git branch
-* master
-[marty@gromit gitpullpush]$ git branch savepoint$$
-[marty@gromit gitpullpush]$ git branch
-* master
-  savepoint12414
-[marty@gromit gitpullpush]$ #complete clone
-[marty@gromit gitpullpush]$ git stash
-Saved working directory and index state WIP on master: 4b0dcaf update current branch with new files and changes
-HEAD is now at 4b0dcaf update current branch with new files and changes
-[marty@gromit gitpullpush]$ git checkout savepoint12414
-Switched to branch 'savepoint12414'
-[marty@gromit gitpullpush]$ git stash pop
-# On branch savepoint12414
-# Changes not staged for commit:
-#   (use "git add <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
-#
-#       modified:   samplegitcommands
-#
-no changes added to commit (use "git add" and/or "git commit -a")
-Dropped refs/stash@{0} (bb82462a6b52e3f7acb567c06d8750b99ed5b53d)
 
 
